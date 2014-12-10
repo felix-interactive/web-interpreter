@@ -1,0 +1,19 @@
+{
+  "name": "web-interpreter",
+  "version": "0.0.1",
+  "homepage": "https://github.com/felix-interactive/web-interpreter",
+  "authors": [
+    "Gavin Ching <gavinchingy@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.1"
+  }
+}
