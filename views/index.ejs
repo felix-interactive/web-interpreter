@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Interpreter</title>
+    <meta name="viewport"
+    content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <!-- 1. Load platform support before any code that touches the DOM. -->
+    <link rel='stylesheet' href='/stylesheets/reset.css' />
+    <link rel='stylesheet' href='/stylesheets/shared.css' />
+    <link rel="stylesheet" href='/stylesheets/custom.css' />
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="javascripts/Data.js"></script>
+    <script src="javascripts/Canvas.js"></script>
+    <script src="javascripts/Modifiers.js"></script>
+    <script src="javascripts/Variables.js"></script>
+    <script src="javascripts/Page_Data.js"></script>
+    <script>
+      var i_canvas = new Canvas();
+      var i_page_data = new Page_Data();
+      var i_data = new Data();
+      var i_modifiers = new Modifiers();
+      var i_variables = new Variables();
+      var load_app = document.createElement("entire-app");
+      load_app.setAttribute("url", "http://staging2.felix-interactive.com:5001/v1/apps/8226feaf-36c0-4acd-b96e-e7b56ea6effd/pages/0385b34c-67b7-4114-afda-7f0ecc3be70d");
+    </script>
+    <!-- 2. Load the component using an HTML Import -->
+    <link rel="import" href="components/entire-app.html">
+  </head>
+  <body unresolved>
+    <!-- 3. Declare the element by its tag. -->
+
+  <!--  <entire-app url="http://staging2.felix-interactive.com:5001/v1/apps/9bc6a4be-087b-4327-9aaf-92935c151b11/pages/36870310-a3bc-4487-a876-5c3d8293aef4">
+  </entire-app> -->
+
+
+    <%- include templates %>
+    <script>
+      document.body.appendChild(load_app);
+    </script>
+  </body>
+</html>

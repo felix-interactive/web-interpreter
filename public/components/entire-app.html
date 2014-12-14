@@ -1,0 +1,36 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="entire-app" constructor="EntireApp" attributes="url">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <core-ajax
+    auto
+    url="{{url}}"
+    handleAs="json"
+    response="{{response}}"></core-ajax>
+    <div class="entire" id="entireApp">
+      <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+
+      created: function(){
+      },
+      responseChanged: function(oldResponse){
+        console.log("Response received")
+        var renderedApp = i_canvas.render(JSON.parse(this.response.data));
+        this.renderedApp = renderedApp
+        //this.appendChild(renderedApp[0])
+        this.$.entireApp.innerHTML = renderedApp[0].innerHTML
+      }
+    })
+  </script>
+</polymer-element>
