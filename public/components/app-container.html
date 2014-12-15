@@ -1,0 +1,54 @@
+<!--
+  app-container.html
+
+  Defines the component which routes all the given pages provided by an application.
+  Assists in wrapping each page with a page-container element
+
+  As well, it contains all the pages/elements/components in it. This will be populated
+  through ajax calls to the api.
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../bower_components/left-swipe-action/left-swipe-action.html">
+<link rel="import" href="../bower_components/app-router/app-router.html">
+
+<polymer-element name="app-container" constructor="AppContainer" attributes="url">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+    <core-ajax
+    auto
+    url="http://staging2.felix-interactive.com:5001/v1/apps/{{url}}"
+    handleAs="json"
+    response="{{response}}"></core-ajax>
+    <
+    <div class="entire" id="entireApp" touch-action="none">
+        <content></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+
+      ready: function(){
+        var entireApp = this.$.entireApp;
+        PolymerGestures.addEventListener(entireApp, "up", this.tapMe.bind(this));
+      },
+      responseChanged: function(oldResponse){
+        console.log("Response received")
+        var renderedApp = i_canvas.render(JSON.parse(this.response.data));
+        //this.renderedApp = renderedApp
+        this.appendChild(renderedApp[0])
+        //this.$.entireApp.innerHTML = renderedApp[0].innerHTML
+      },
+      tapMe: function(){
+        console.log("Tapped.");
+      }
+    })
+  </script>
+</polymer-element>

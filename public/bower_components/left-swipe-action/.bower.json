@@ -1,0 +1,29 @@
+{
+  "name": "left-swipe-action",
+  "authors": [
+    "tejitak"
+  ],
+  "description": "Left swipe action with Polymer web components",
+  "keywords": [
+    "Polymer",
+    "web-components"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/tejitak/left-swipe-action",
+  "dependencies": {
+    "polymer": "~0.5.1"
+  },
+  "ignore": [
+    "**/.*"
+  ],
+  "_release": "c54dd17e68",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "c54dd17e681c69a52809fb9520659860965b7833"
+  },
+  "_source": "git://github.com/tejitak/left-swipe-action.git",
+  "_target": "master",
+  "_originalSource": "tejitak/left-swipe-action",
+  "_direct": true
+}

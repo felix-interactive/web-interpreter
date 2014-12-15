@@ -16,6 +16,8 @@
   "dependencies": {
     "polymer": "Polymer/polymer#~0.5.1",
     "core-ajax": "Polymer/core-ajax#~0.5.1",
-    "jquery": "~2.1.1"
+    "jquery": "~2.1.1",
+    "left-swipe-action": "tejitak/left-swipe-action#master",
+    "app-router": "~2.3.0"
   }
 }

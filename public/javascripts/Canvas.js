@@ -9,7 +9,8 @@ function Canvas(){
 }
 
 Canvas.prototype.render = function (data){
-	var canvas = $('<div>').addClass('entire').css({height: "1000px", width: "1000px"});
+	var $body = $(this.ie6 ? document.body : document);
+	var canvas = $('<div>').addClass('entire').css({height: $body.height(), width: $body.width()});
 	canvas.empty();
 	this.drawElement(canvas, data.ui["0"], data);
 	return canvas;
